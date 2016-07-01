@@ -20,12 +20,18 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-Route::resource('/user', 'UserController');
 
 Route::group(['middleware'=> 'web'], function(){
 Route::auth();
+});
+
+Route::group(['middleware'=> 'admin'], function(){
+Route::resource('/user', 'UserController');
+
+});
+
 
 Route::controller('/home', 'HomeController');
 Route::get('/home', 'HomeController@index');
-});
+
 

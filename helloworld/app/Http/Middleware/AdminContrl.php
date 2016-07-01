@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminContrl
 {
@@ -19,7 +20,7 @@ class AdminContrl
 	if($user && $user->isAdmin){ 
 	 return $next($request);
 	}
-	abort(403, " Permission Denied");
+	return Redirect:: to('/home');
  // 403 display view redirect   
 }
 }

@@ -4,7 +4,6 @@
 
 
 @extends('layouts.app')
-me.blade.php
 
 @section('content')
 <div class="container">

@@ -43,6 +43,20 @@ class UserTableSeeder extends Seeder {
                                 'created_at'  => new DateTime(),
                                 'updated_at'  => new DateTime()
                         ]);
+
+		 $User3 = DB::table('users')->insert([
+                                'isAdmin' => true,
+			        'name'       => 'Administrator',
+                                'username'   => 'Admin',
+                                'phonenumber'=> '567890',
+                                'address'    => '102 Admin Lane',
+                                'email'      => 'Admin@yahoo.com',
+                                'password'   => Hash::make('Admin123'),
+                                'created_at' => new DateTime(),
+                                'updated_at' => new DateTime()
+                        ]);
+	
+
 }
 }
 ?>

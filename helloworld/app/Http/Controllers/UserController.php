@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Auth;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -20,7 +20,7 @@ class UserController extends Controller
 
 public function __construct()
 	{
-	 //$this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+//	 $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
 	//	$this->('auth');
 	}
 
