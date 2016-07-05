@@ -20,6 +20,7 @@ Route::get('/', function () {
   return view('welcome');
 });
 
+//Route::GET{'/', '
 
 Route::group(['middleware'=> 'web'], function(){
 Route::auth();
