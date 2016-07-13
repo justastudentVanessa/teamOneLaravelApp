@@ -11,7 +11,7 @@ class UserFormTest extends TestCase
      *
      * @return void
      */
-    public function test_User_Form()
+    public function testUserFormBehaviors()
     {
         $this->visit('/user')
 	     //->click('Edit')

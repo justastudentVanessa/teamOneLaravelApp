@@ -11,7 +11,7 @@ class RegisterFormTest extends TestCase
      *
      * @return void
      */
-    public function test_Register_Form()
+    public function testRegisterFormBehaviors()
     {
         $this->visit('/register')
 	     ->type('Name', 'name')

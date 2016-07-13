@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use App\User;
 
 class LoginFormTest extends TestCase
 {
@@ -10,9 +11,9 @@ class LoginFormTest extends TestCase
      * A basic test example.
      *
      * @return void
-     */
-    public function test_Login_Page()
-    {
+     */	
+    public function testLoginForm()
+    {	
         $this->visit('/login')
 	     ->type('Email', 'email')
 	     ->type('Password', 'password')
