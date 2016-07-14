@@ -1,7 +1,7 @@
 
 @extends ('layouts.app')
 
-@section('title') Create User @stop
+@section('title') EditCourse  @stop
 
 @section('content')
 
@@ -15,7 +15,7 @@
 
     <h1><i class='fa fa-user'></i> Add Course</h1>
 
-    {{ Form::model($user, ['role' => 'form', 'url' => '/GolfCourses' . $GolfCourse->id, 'method' => 'PUT']) }}
+    {{ Form::model($user, ['role' => 'form', 'url' => '/CourseTable' . $course->id, 'method' => 'PUT']) }}
 <div class='form-group'>
         {{ Form::label('coursename','Course Name') }}
         {{ Form::text('coursename', null, ['placeholder' => 'Course Name', 'class' => 'form-control']) }}

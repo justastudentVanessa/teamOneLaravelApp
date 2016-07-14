@@ -29,7 +29,7 @@ Route::group(['middleware'=> 'admin'], function(){
 Route::resource('/user', 'UserController');
 Route::resource('/CourseTable', 'GolfCourseController');
 });
-
+Route::resource('/CreateCourse','GolfCourseController');
 
 Route::controller('/home', 'HomeController');
 Route::get('/home', 'HomeController@index');

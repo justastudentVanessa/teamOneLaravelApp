@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title') Create User @stop
+@section('title') CreateCourse  @stop
 
 @section('content')
 
@@ -14,7 +14,7 @@
 
     <h1><i class='fa fa-user'></i> Add Course</h1>
 
-    {{ Form::open(['role' => 'form', 'url' => '/GolfCourses']) }}
+    {{ Form::open(['role' => 'form', 'url' => '/CourseTable']) }}
 
     <div class='form-group'>
         {{ Form::label('coursename','Course Name') }}

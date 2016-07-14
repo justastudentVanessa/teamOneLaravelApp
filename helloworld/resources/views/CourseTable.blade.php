@@ -2,7 +2,7 @@
 
 @extends('layouts.app')
 
-@section('title') CourseTable @stop
+@section('title') coursetable @stop
 
 @section('content')
 
@@ -18,21 +18,19 @@
                     <th>Course Name</th>
                     <th>Address</th>
                     <th>Phone</th>
-                    <th>Date/Time Added</th>
                     <th></th>
                 </tr>
             </thead>
 
             <tbody>
-                @foreach ($courses as $courses)
+                @foreach ($courses as $course)
                 <tr>
-                    <td>{{ $GolfCourse->coursename }}
-                    <td>{{ $GolfCourse->address }}</td>
-                    <td>{{ $GolfCourse->phone }}</td>
-                    <td>{{ $user->created_at->format('F d, Y h:ia') }}</td>
+                    <td>{{ $course->coursename }}
+                    <td>{{ $course->address }}</td>
+                    <td>{{ $course->phone }}</td>
                     <td>
                         <a href="/CourseTable{{ $GolfCourse->$id }}/Courseedit" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
-                        {{ Form::open(['url' => '/CourseTable' . $courses->id, 'method' => 'DELETE']) }}
+                        {{ Form::open(['url' => '/CourseTable' . $course->id, 'method' => 'DELETE']) }}
                         {{ Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                         {{ Form::close() }}
                     </td>

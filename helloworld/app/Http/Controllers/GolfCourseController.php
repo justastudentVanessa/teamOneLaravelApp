@@ -31,10 +31,10 @@ public function __construct()
          */
         public function index()
         {
-                $Courses = course::all();
+                $courses = course::all();
 
 
-                return View::make('CourseTable', ['Golf Courses' => $Courses]);
+                return View::make('CourseTable', ['Golf Courses' => $courses]);
         }
 
         /**
@@ -54,18 +54,16 @@ public function __construct()
          */
         public function store()
         {
-                $GolfCourse = new GolfCourse;
+                $course  = new course;
 
-                $GolfCourse->coursename  = Input::get('coursename');
-                $GolfCourse->address   = Input::get('address');
-                $GolfCourse->city      = Input::get('city');
-                $GolfCourse->state      = Input::get('state');
-                $GolfCourse->zip  = Input::get('zip');
-                $GolfCourse->phone  = Input::get('username');
+                $course->coursename  = Input::get('coursename');
+                $course->address   = Input::get('address');
+                $course->city      = Input::get('city');
+                $course->state      = Input::get('state');
+                $course->zip  = Input::get('zip');
+                $course->phone  = Input::get('username');
 
-
-
-                $GolfCourse->save();
+                $course->save();
 
                 return Redirect::to('/CourseTable');
         }
@@ -79,9 +77,9 @@ public function __construct()
 
   public function edit($id)
         {
-                $GolfCourse = GolfCourse::find($id);
+                $course = course::find($id);
 
-                return View::make('EditCourse', [ 'GolfCourse' => $GolfCourse ]);
+                return View::make('EditCourse', [ 'course' => $course ]);
         }
 
         /**
@@ -92,17 +90,17 @@ public function __construct()
          */
         public function update($id)
         {
-                $GolfCourse = GolfCourse::find($id);
-		 $GolfCourse->coursename  = Input::get('coursename');
-                $GolfCourse->address   = Input::get('address');
-                $GolfCourse->city      = Input::get('city');
-                $GolfCourse->state      = Input::get('state');
-                $GolfCourse->zip  = Input::get('zip');
-                $GolfCourse->phone  = Input::get('username');
+                $course = course::find($id);
+		 $course ->coursename  = Input::get('coursename');
+                $course->address   = Input::get('address');
+                $course->city      = Input::get('city');
+                $course->state      = Input::get('state');
+                $course->zip  = Input::get('zip');
+                $course->phone  = Input::get('username');
 
-		 $GolfCourse->save();
+		 $course->save();
 
-                return Redirect::to('/GolfCourses');
+                return Redirect::to('/CourseTable');
         }
 
         /**

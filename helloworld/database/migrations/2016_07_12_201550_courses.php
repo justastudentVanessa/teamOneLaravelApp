@@ -20,7 +20,6 @@ class Courses extends Migration
             $table->string('state');
             $table->string('zip');
             $table->string('phone');
-            $table->rememberToken();
             $table->timestamps();
 
   
