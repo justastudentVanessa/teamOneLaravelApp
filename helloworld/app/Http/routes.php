@@ -20,6 +20,7 @@ Route::get('/', function () {
   return view('welcome');
 });
 
+//Route::GET{'/', '
 
 Route::group(['middleware'=> 'web'], function(){
 Route::auth();
@@ -27,7 +28,10 @@ Route::auth();
 
 Route::group(['middleware'=> 'admin'], function(){
 Route::resource('/user', 'UserController');
+<<<<<<< HEAD
 Route::resource('/CourseTable', 'GolfCourseController');
+=======
+>>>>>>> 8961686d5ade26a78a020853831eb410f50a7425
 });
 Route::resource('/CreateCourse','GolfCourseController');
 
