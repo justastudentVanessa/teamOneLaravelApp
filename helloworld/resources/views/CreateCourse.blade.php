@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title') CreateCourse  @stop
+@section('title') Create Course  @stop
 
 @section('content')
 
@@ -54,5 +54,3 @@
 </div>
 
 @stop
-~
-

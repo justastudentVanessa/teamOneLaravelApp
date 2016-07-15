@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
+use App\course;
+use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 use View;
-use App\course;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 //use App\Http\Controllers\Hash;
@@ -61,11 +63,11 @@ public function __construct()
                 $course->city      = Input::get('city');
                 $course->state      = Input::get('state');
                 $course->zip  = Input::get('zip');
-                $course->phone  = Input::get('username');
+                $course->phone  = Input::get('phone');
 
                 $course->save();
 
-                return Redirect::to('/CreateCourse');
+                return Redirect::to('/CourseTable');
         }
 
         /**
@@ -91,12 +93,13 @@ public function __construct()
         public function update($id)
         {
                 $course = course::find($id);
-		 $course ->coursename  = Input::get('coursename');
+
+		$course ->coursename  = Input::get('coursename');
                 $course->address   = Input::get('address');
                 $course->city      = Input::get('city');
                 $course->state      = Input::get('state');
                 $course->zip  = Input::get('zip');
-                $course->phone  = Input::get('username');
+                $course->phone  = Input::get('phone');
 
 		 $course->save();
 
@@ -111,16 +114,9 @@ public function __construct()
          */
         public function destroy($id)
         {
-                GolfCourse::destroy($id);
+                course::destroy($id);
 
                 return Redirect::to('CourseTable');
         }
-
-
-
-
-
-
-
-
 }
+?>

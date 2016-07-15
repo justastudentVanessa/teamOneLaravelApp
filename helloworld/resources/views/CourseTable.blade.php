@@ -2,7 +2,7 @@
 
 @extends('layouts.app')
 
-@section('title') coursetable @stop
+@section('title') Course Table @stop
 
 @section('content')
 
@@ -17,6 +17,9 @@
                 <tr>
                     <th>Course Name</th>
                     <th>Address</th>
+		    <th>City</th>
+		    <th>State</th>
+		    <th>Zip</th>
                     <th>Phone</th>
                     <th></th>
                 </tr>
@@ -27,10 +30,13 @@
                 <tr>
                     <td>{{ $course->coursename }}
                     <td>{{ $course->address }}</td>
+		    <td>{{ $course->city }}</td>
+		    <td>{{ $course->state }}</td>
+		    <td>(( $course->zip }}</td>
                     <td>{{ $course->phone }}</td>
                     <td>
-                        <a href="/CourseTable{{ $GolfCourse->$id }}/Courseedit" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
-                        {{ Form::open(['url' => '/CourseTable' . $course->id, 'method' => 'DELETE']) }}
+                        <a href="/CourseTable/{{ $course->$id }}/edit" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
+                        {{ Form::open(['url' => '/CourseTable/' . $course->id, 'method' => 'DELETE']) }}
                         {{ Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                         {{ Form::close() }}
                     </td>

@@ -28,14 +28,12 @@ Route::auth();
 
 Route::group(['middleware'=> 'admin'], function(){
 Route::resource('/user', 'UserController');
-<<<<<<< HEAD
-Route::resource('/CourseTable', 'GolfCourseController');
-=======
->>>>>>> 8961686d5ade26a78a020853831eb410f50a7425
+Route::resource('/CourseTable', 'courseController');
+Route::resource('/CreateCourse', 'courseController');
 });
-Route::resource('/CreateCourse','GolfCourseController');
+//Route::resource('/CreateCourse','courseController');
 
 Route::controller('/home', 'HomeController');
 Route::get('/home', 'HomeController@index');
 
-
+?>

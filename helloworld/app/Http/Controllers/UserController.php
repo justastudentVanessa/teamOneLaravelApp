@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Auth;
 use App\User;
 use Validator;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Redirect;
 //use App\Http\Controllers\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
+
 class UserController extends Controller
 {
     //this will be our controller for our admin to 
@@ -116,7 +118,5 @@ public function __construct()
 
 		return Redirect::to('user');
 	}
-
-
-
 }
+?>
