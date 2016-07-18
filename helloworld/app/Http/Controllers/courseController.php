@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 
-class courseController  extends Controller
+class courseController extends Controller
 {
     //creates a golf course editor
 
@@ -58,12 +58,12 @@ public function __construct()
         {
                 $course  = new course;
 
-                $course->coursename  = Input::get('coursename');
-                $course->address   = Input::get('address');
-                $course->city      = Input::get('city');
-                $course->state      = Input::get('state');
-                $course->zip  = Input::get('zip');
-                $course->phone  = Input::get('phone');
+                $course->coursename = Input::get('coursename');
+                $course->address = Input::get('address');
+                $course->city = Input::get('city');
+                $course->state = Input::get('state');
+                $course->zip = Input::get('zip');
+                $course->phone = Input::get('phone');
 
                 $course->save();
 
@@ -94,12 +94,12 @@ public function __construct()
         {
                 $course = course::find($id);
 
-		$course ->coursename  = Input::get('coursename');
-                $course->address   = Input::get('address');
-                $course->city      = Input::get('city');
-                $course->state      = Input::get('state');
-                $course->zip  = Input::get('zip');
-                $course->phone  = Input::get('phone');
+		$course ->coursename = Input::get('coursename');
+                $course->address = Input::get('address');
+                $course->city = Input::get('city');
+                $course->state = Input::get('state');
+                $course->zip = Input::get('zip');
+                $course->phone = Input::get('phone');
 
 	        $course->save();
 
