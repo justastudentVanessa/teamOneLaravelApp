@@ -20,7 +20,14 @@ class LoginFormTest extends TestCase
 	     ->press('Login')
 	     ->click('Login')
 	     ->click('Register')
-	     ->click('Admin')
 	     ->click('Home');
     }
+
+    /*public function testLoginValidation()
+    {
+	$user = User::create();
+
+	$user->username = null;
+	$this->assertFalse($user->validate(['username']));
+    }*/
 }

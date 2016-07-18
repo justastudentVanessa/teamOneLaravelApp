@@ -14,11 +14,11 @@ class UserFormTest extends TestCase
     public function testUserFormBehaviors()
     {
         $this->visit('/user')
-	     //->click('Edit')
+	     //->press('Edit')
 	     //->press('Delete')
 	     //->press('Add User')
-	     ->click('Login')//Link is "Logout" on screen. Test fails otherwise
-	     ->click('Admin');
-	     //->click('Administrator');
+	     ->click('Home')
+	     ->click('Users')
+	     ->click('Courses');
     }
 }

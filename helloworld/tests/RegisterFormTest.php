@@ -25,8 +25,8 @@ class RegisterFormTest extends TestCase
 	     ->press('Register')
 	     ->click('Register')
 	     ->click('Login')
-	     ->click('Home')
-	     ->click('Login')
-	     ->click('Admin');
+	     ->click('Courses')
+	     ->click('Users')
+	     ->click('Home');
     }
 }
