@@ -22,4 +22,3 @@ class course  extends Authenticatable
      * @var array
      */
 }
-

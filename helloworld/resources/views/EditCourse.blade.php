@@ -1,4 +1,3 @@
-
 @extends ('layouts.app')
 
 @section('title') Edit Course  @stop
@@ -54,4 +53,3 @@
 </div>
 
 @stop
-

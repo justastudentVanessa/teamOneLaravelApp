@@ -6,7 +6,7 @@
 
 <div class="col-lg-10 col-lg-offset-1">
 
-    <h1><i class="fa fa-users"></i> Course  Administration <a href="/logout" class="btn btn-default pull-right">Logout</a></h1>
+    <h1><i class="fa fa-users"></i> Course Administration</h1>
 
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
@@ -34,7 +34,7 @@
                     <td>{{ $course->phone }}</td>
                     <td>
                         <a href="/CourseTable/{{ $course->$id }}/edit" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
-                        {{ Form::open(['url' => '/CourseTable/' . $course->id, 'method' => 'DELETE']) }}
+                        {{ Form::open(['url' => '/course/' . $course->id, 'method' => 'DELETE']) }}
                         {{ Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                         {{ Form::close() }}
                     </td>
@@ -50,4 +50,3 @@
 </div>
 
 @stop
-

@@ -13,12 +13,12 @@ class CourseSeeder extends Seeder
     {
         //
       $Course1 = DB::table('courses')->insert([
-                                'coursename'  => 'Course1',
-                                'address'   => 'One Street',
-                                'city'=> 'Austin',
+                                'coursename'  => 'Teravista Golf Club',
+                                'address'   => '4332 Teravista Club Dr',
+                                'city'   => 'Round Rock',
                                 'state'    => 'Texas',
-                                'zip'      => '78749',
-                                'phone'   => '512-329-8078',
+                                'zip'      => '78665',
+                                'phone'   => '512-651-9850',
                         ]);
 
 

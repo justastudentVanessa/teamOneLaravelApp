@@ -101,7 +101,7 @@ public function __construct()
                 $course->zip  = Input::get('zip');
                 $course->phone  = Input::get('phone');
 
-		 $course->save();
+	        $course->save();
 
                 return Redirect::to('/CourseTable');
         }

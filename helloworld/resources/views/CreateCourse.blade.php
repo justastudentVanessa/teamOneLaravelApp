@@ -12,7 +12,7 @@
         @endforeach
     @endif
 
-    <h1><i class='fa fa-user'></i> Add Course</h1>
+    <h1><i class='fa fa-user-plus'></i> Add Course</h1>
 
     {{ Form::open(['role' => 'form', 'url' => '/CourseTable']) }}
 

@@ -64,8 +64,6 @@ public function __construct()
                 $user->email      = Input::get('email');
                 $user->password   = Hash::make(Input::get('password'));
 
-
-
 		$user->save();
 
 		return Redirect::to('/user');
