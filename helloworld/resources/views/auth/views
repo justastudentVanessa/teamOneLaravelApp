@@ -1,10 +1,16 @@
 
 
-@extends('layouts.app')
 
+
+
+
+
+@extends('layouts.app')
 @section('title') Users @stop
 
+
 @section('content')
+
 
 <div class="col-lg-10 col-lg-offset-1">
 
@@ -26,7 +32,7 @@
             <tbody>
                 @foreach ($users as $user)
                 <tr>
-		    <td>{{ $user->name }}
+                    <td>{{ $user->getFullName() }}</td>
                     <td>{{ $user->username }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->created_at->format('F d, Y h:ia') }}</td>
@@ -47,4 +53,4 @@
 
 </div>
 
-@stop
+@endsection

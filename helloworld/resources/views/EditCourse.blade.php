@@ -1,6 +1,7 @@
+
 @extends ('layouts.app')
 
-@section('title') Edit Course  @stop
+@section('title') EditCourse  @stop
 
 @section('content')
 
@@ -14,7 +15,7 @@
 
     <h1><i class='fa fa-user'></i> Edit Course</h1>
 
-    {{ Form::model($user, ['role' => 'form', 'url' => '/CourseTable/' . $course->id, 'method' => 'PUT']) }}
+    {{ Form::model($course, ['role' => 'form', 'url' => '/CourseTable/' . $course->id, 'method' => 'PUT']) }}
 <div class='form-group'>
         {{ Form::label('coursename','Course Name') }}
         {{ Form::text('coursename', null, ['placeholder' => 'Course Name', 'class' => 'form-control']) }}
@@ -39,10 +40,12 @@
         {{ Form::text('zip', null, ['placeholder' => 'Zip Code', 'class' => 'form-control']) }}
     </div>
 
-    <div class='form-group'>
-        {{ Form::label('phone', 'Phone Number') }}
-        {{ Form::text('phone', ['placeholder' => 'Phone Number', 'class' => 'form-control']) }}
-    </div>
+
+ <div class='form-group'> 
+        {{ Form::label('phone', 'Phone Number') }} 
+        {{ Form::text('phone', null, ['placeholder' => 'Phone Number', 'class' => 'form-control']) }} 
+     </div> 
+
 
     <div class='form-group'>
         {{ Form::submit('Create', ['class' => 'btn btn-primary']) }}
@@ -53,3 +56,4 @@
 </div>
 
 @stop
+

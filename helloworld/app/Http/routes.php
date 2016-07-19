@@ -20,7 +20,6 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-//Route::GET{'/', '
 
 Route::group(['middleware'=> 'web'], function(){
 Route::auth();
@@ -28,13 +27,11 @@ Route::auth();
 
 Route::group(['middleware'=> 'admin'], function(){
 Route::resource('/user', 'UserController');
-Route::resource('/course', 'courseController');
 Route::resource('/CourseTable', 'courseController');
-Route::resource('/CreateCourse', 'courseController');
-Route::resource('/EditCourse', 'courseController');
 });
+//Route::resource('/CreateCourse','courseController');
 
 Route::controller('/home', 'HomeController');
 Route::get('/home', 'HomeController@index');
 
-?>
+

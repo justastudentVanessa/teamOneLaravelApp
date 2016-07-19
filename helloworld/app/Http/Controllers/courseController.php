@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Auth;
-use App\course;
-use Validator;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Illuminate\Http\Request;
 use View;
+use App\course;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 //use App\Http\Controllers\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 
-class courseController extends Controller
+class courseController  extends Controller
 {
     //creates a golf course editor
 
@@ -58,12 +56,12 @@ public function __construct()
         {
                 $course  = new course;
 
-                $course->coursename = Input::get('coursename');
-                $course->address = Input::get('address');
-                $course->city = Input::get('city');
-                $course->state = Input::get('state');
-                $course->zip = Input::get('zip');
-                $course->phone = Input::get('phone');
+                $course->coursename  = Input::get('coursename');
+                $course->address   = Input::get('address');
+                $course->city      = Input::get('city');
+                $course->state      = Input::get('state');
+                $course->zip  = Input::get('zip');
+                $course->phone  = Input::get('phone');
 
                 $course->save();
 
@@ -93,15 +91,14 @@ public function __construct()
         public function update($id)
         {
                 $course = course::find($id);
+		 $course ->coursename  = Input::get('coursename');
+                $course->address   = Input::get('address');
+                $course->city      = Input::get('city');
+                $course->state      = Input::get('state');
+                $course->zip  = Input::get('zip');
+                $course->phone  = Input::get('phone');
 
-		$course ->coursename = Input::get('coursename');
-                $course->address = Input::get('address');
-                $course->city = Input::get('city');
-                $course->state = Input::get('state');
-                $course->zip = Input::get('zip');
-                $course->phone = Input::get('phone');
-
-	        $course->save();
+		 $course->save();
 
                 return Redirect::to('/CourseTable');
         }
@@ -116,7 +113,14 @@ public function __construct()
         {
                 course::destroy($id);
 
-                return Redirect::to('CourseTable');
+                return Redirect::to('/CourseTable');
         }
+
+
+
+
+
+
+
+
 }
-?>

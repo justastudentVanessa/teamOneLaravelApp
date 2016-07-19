@@ -39,9 +39,9 @@
                 </button>
 
                 <!-- Branding Image -->
-                <!--<a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     Team One Project
-                </a>-->
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -50,10 +50,8 @@
                     <li><a href="{{ url('/home') }}">Home</a></li>
                 </ul>
 		<ul class="nav navbar-nav">
-                    <li><a href="{{ url('/user') }}">Users</a></li>
+                    <li><a href="{{ url('/user') }}">Admin</a></li>
                 </ul>
-		<ul class = "nav navbar-nav">
-		    <li><a href = " {{ url('/CourseTable') }}">Courses</a></li>			</ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

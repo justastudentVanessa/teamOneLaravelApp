@@ -12,7 +12,7 @@
         @endforeach
     @endif
 
-    <h1><i class='fa fa-user-plus'></i> Add Course</h1>
+    <h1><i class='fa fa-user'></i> Add Course</h1>
 
     {{ Form::open(['role' => 'form', 'url' => '/CourseTable']) }}
 
@@ -42,7 +42,7 @@
 
     <div class='form-group'>
         {{ Form::label('phone', 'Phone Number') }}
-        {{ Form::text('phone', ['placeholder' => 'Phone Number', 'class' => 'form-control']) }}
+        {{ Form::text('phone', null, ['placeholder' => 'Phone Number', 'class' => 'form-control']) }}
     </div>
 
     <div class='form-group'>
@@ -54,3 +54,5 @@
 </div>
 
 @stop
+~
+
