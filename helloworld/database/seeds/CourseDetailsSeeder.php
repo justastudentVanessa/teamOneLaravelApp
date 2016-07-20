@@ -14,9 +14,6 @@ class CourseSeeder extends Seeder
         //
       $Course1 = DB::table('CourseDetails')->insert([
                                 'teecolor' => 'Color',
-                                'yardage' => 'Yardage',
-                                'handicap' => 'Number',
-                                'par' => 'Number',
                         ]);		
      }
 }

@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Hash;
 
 class courseController  extends Controller
 {
-    //creates a golf course editor
+	//creates a golf course editor
 
-public function __construct()
+	public function __construct()
         {
-//       $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+	// $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
         //      $this->('auth');
         }
 
@@ -29,20 +29,24 @@ public function __construct()
          *
          * @return Response
          */
-       public  function index()
+        public  function index()
         {
-               $query = Request::input('q');
-		if ($query){		
-		$courses= Course::where('state','LIKE', "%$query%")
-		->orWhere('coursename','LIKE', "%$query%")
-		->orWhere('zip','LIKE', "%$query%")
-		->orWhere('city','LIKE', "%$query%")
-		->get();
+                $query = Request::input('q');
+
+		if ($query)
+		{		
+		    $courses= Course::where('coursename','LIKE', "%$query%")
+		    ->orWhere('address','LIKE', "%$query%")
+		    ->orWhere('city','LIKE', "%$query%")
+	  	    ->orWhere('state','LIKE', "%$query%")
+		    ->orWhere('zip', 'LIKE', "%$query%")
+		    ->orWhere('phone', 'LIKE', "%$query%")
+		    ->get();
 		}
 		
 		else
 		{		
-		 $courses = Course::all();
+		    $courses = Course::all();
 		}
                 return View::make('CourseTable', ['courses' => $courses]);
         }
@@ -66,12 +70,12 @@ public function __construct()
         {
                 $course  = new Course;
 
-                $course->coursename  = Input::get('coursename');
-                $course->address   = Input::get('address');
-                $course->city      = Input::get('city');
-                $course->state      = Input::get('state');
-                $course->zip  = Input::get('zip');
-                $course->phone  = Input::get('phone');
+                $course->coursename = Input::get('coursename');
+                $course->address = Input::get('address');
+                $course->city = Input::get('city');
+                $course->state = Input::get('state');
+                $course->zip = Input::get('zip');
+                $course->phone = Input::get('phone');
 
                 $course->save();
 
@@ -85,7 +89,7 @@ public function __construct()
          * @return Response
          */
 
-  public function edit($id)
+	public function edit($id)
         {
                 $course = Course::find($id);
 
@@ -101,12 +105,13 @@ public function __construct()
         public function update($id)
         {
                 $course = Course::find($id);
-		 $course ->coursename  = Input::get('coursename');
-                $course->address   = Input::get('address');
-                $course->city      = Input::get('city');
-                $course->state      = Input::get('state');
-                $course->zip  = Input::get('zip');
-                $course->phone  = Input::get('phone');
+
+		$course ->coursename = Input::get('coursename');
+                $course->address = Input::get('address');
+                $course->city = Input::get('city');
+                $course->state = Input::get('state');
+                $course->zip = Input::get('zip');
+                $course->phone = Input::get('phone');
 
 		 $course->save();
 
@@ -128,7 +133,7 @@ public function __construct()
 
 
 
-	public function map($id)
+	/*public function map($id)
 	{
 
 	$course = Course::find($id);
@@ -138,9 +143,5 @@ public function __construct()
 		return Redirect::away($mapurl);
 //	return $course_name;
 //
-	}
-
-
-
-
+	}*/
 }

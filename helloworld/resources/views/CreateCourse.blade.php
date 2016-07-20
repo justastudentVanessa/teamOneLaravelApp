@@ -25,7 +25,8 @@
         {{ Form::label('address', 'Street Address') }}
         {{ Form::text('address', null, ['placeholder' => 'Street Address', 'class' => 'form-control']) }}
     </div>
-<div class='form-group'>
+
+    <div class='form-group'>
         {{ Form::label('city', 'City') }}
         {{ Form::text('city', null, ['placeholder' => 'City', 'class' => 'form-control']) }}
     </div>
@@ -54,5 +55,3 @@
 </div>
 
 @stop
-~
-

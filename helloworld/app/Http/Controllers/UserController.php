@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Auth;
 use App\User;
 use Validator;
@@ -14,13 +15,14 @@ use Illuminate\Support\Facades\Redirect;
 //use App\Http\Controllers\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
+
 class UserController extends Controller
 {
-    //this will be our controller for our admin to 
+	//this will be our controller for our admin to 
 
-public function __construct()
+	public function __construct()
 	{
-//	 $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+	//$this->middleware($this->guestMiddleware(), ['except' => 'logout']);
 	//	$this->('auth');
 	}
 
@@ -32,6 +34,7 @@ public function __construct()
 	public function index()
 	{
 		$users = User::all();
+		
 
 		return View::make('UserTable', ['users' => $users]);
 	}
@@ -55,12 +58,12 @@ public function __construct()
 	{
 		$user = new User;
            
-                $user->name  = Input::get('name');
-                $user->username  = Input::get('username');
-                $user->phonenumber   = Input::get('phonenumber');
-                $user->address      = Input::get('address');
-                $user->email      = Input::get('email');
-                $user->password   = Hash::make(Input::get('password'));
+                $user->name = Input::get('name');
+                $user->username = Input::get('username');
+                $user->phonenumber = Input::get('phonenumber');
+                $user->address = Input::get('address');
+                $user->email = Input::get('email');
+                $user->password = Hash::make(Input::get('password'));
 
 
 
@@ -92,12 +95,12 @@ public function __construct()
 	{
 		$user = User::find($id);
 
-		$user->name  = Input::get('name');
-		$user->username  = Input::get('username');
-		$user->phonenumber   = Input::get('phonenumber');
-		$user->address      = Input::get('address');
-		$user->email      = Input::get('email');
-		$user->password   = Hash::make(Input::get('password'));
+		$user->name = Input::get('name');
+		$user->username = Input::get('username');
+		$user->phonenumber = Input::get('phonenumber');
+		$user->address = Input::get('address');
+		$user->email = Input::get('email');
+		$user->password  = Hash::make(Input::get('password'));
 
 		$user->save();
 
@@ -116,7 +119,4 @@ public function __construct()
 
 		return Redirect::to('user');
 	}
-
-
-
 }

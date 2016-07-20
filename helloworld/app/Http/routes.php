@@ -28,10 +28,9 @@ Route::auth();
 
 Route::group(['middleware'=> 'admin'], function(){
 Route::resource('/user', 'UserController');
-Route::resource('/CourseTable', 'courseController');
+Route::resource('/CourseTable', 'CourseController');
 Route::resource('/CourseDetails', 'CourseDetailsController');
 });
-//Route::resource('/CreateCourse','courseController');
 
 Route::controller('/home', 'HomeController');
 Route::get('/home', 'HomeController@index');
