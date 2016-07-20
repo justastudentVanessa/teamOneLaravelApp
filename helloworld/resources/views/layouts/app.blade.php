@@ -42,7 +42,8 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Team One Project
                 </a>
-            </div>
+  
+	</div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
@@ -50,7 +51,10 @@
                     <li><a href="{{ url('/home') }}">Home</a></li>
                 </ul>
 		<ul class="nav navbar-nav">
-                    <li><a href="{{ url('/user') }}">Admin</a></li>
+                    <li><a href="{{ url('/user') }}">User Table</a></li>
+                </ul>
+		 <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/CourseTable') }}">Golf Courses</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

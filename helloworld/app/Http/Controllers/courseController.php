@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use View;
-use App\course;
+use App\Course;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 //use App\Http\Controllers\Hash;
@@ -29,11 +29,21 @@ public function __construct()
          *
          * @return Response
          */
-        public function index()
+       public  function index()
         {
-                $courses = course::all();
-
-
+               $query = Request::input('q');
+		if ($query){		
+		$courses= Course::where('state','LIKE', "%$query%")
+		->orWhere('coursename','LIKE', "%$query%")
+		->orWhere('zip','LIKE', "%$query%")
+		->orWhere('city','LIKE', "%$query%")
+		->get();
+		}
+		
+		else
+		{		
+		 $courses = Course::all();
+		}
                 return View::make('CourseTable', ['courses' => $courses]);
         }
 
@@ -54,7 +64,7 @@ public function __construct()
          */
         public function store()
         {
-                $course  = new course;
+                $course  = new Course;
 
                 $course->coursename  = Input::get('coursename');
                 $course->address   = Input::get('address');
@@ -77,7 +87,7 @@ public function __construct()
 
   public function edit($id)
         {
-                $course = course::find($id);
+                $course = Course::find($id);
 
                 return View::make('EditCourse', [ 'course' => $course ]);
         }
@@ -90,7 +100,7 @@ public function __construct()
          */
         public function update($id)
         {
-                $course = course::find($id);
+                $course = Course::find($id);
 		 $course ->coursename  = Input::get('coursename');
                 $course->address   = Input::get('address');
                 $course->city      = Input::get('city');
@@ -111,14 +121,24 @@ public function __construct()
          */
         public function destroy($id)
         {
-                course::destroy($id);
+                Course::destroy($id);
 
                 return Redirect::to('/CourseTable');
         }
 
 
 
+	public function map($id)
+	{
 
+	$course = Course::find($id);
+	$course_name = Course::get('coursename');
+	$course_city = Course::get('city');
+	$mapurl = "https://maps.googleapis.com/maps/api/staticmap?center={$course->coursename = Course::get('coursename')},{$course->city = Course::get('city')}&zoom=14&size=400x400&key=&zoom=14&size=400x400&key";
+		return Redirect::away($mapurl);
+//	return $course_name;
+//
+	}
 
 
 

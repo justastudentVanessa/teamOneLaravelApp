@@ -14,6 +14,9 @@
         <table class="table table-bordered table-striped">
 
             <thead>
+		{{Form::open(['method' =>'GET'])}}
+		{{Form::input('search','q',null, ['placeholder'=> 'Search...'])}}
+		{{Form::close()}}
                 <tr>
 		 <th>Course Name</th> 
                      <th>Address</th> 
@@ -25,7 +28,6 @@
                     <th></th>
                 </tr>
             </thead>
-
             <tbody>
                 @foreach ($courses as $course)
                 <tr>
@@ -37,10 +39,13 @@
                     <td>{{ $course->phone }}</td> 	
                    <td>
                         <a href="/CourseTable/{{ $course->id }}/edit" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
-                        {{ Form::open(['url' => '/CourseTable/' . $course->id, 'method' => 'DELETE']) }}
-                        {{ Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-                        {{ Form::close() }}
-                    </td>
+         <a href="/CourseTable/{{ $course->id }}/map" class="btn btn-primary pull-left" style="margin-right: 3px;">Profile</a>
+        
+	 {{ Form::open(['url' => '/CourseTable/' . $course->id, 'method' => 'DELETE']) }} 				        
+                 {{ Form::submit('Delete', ['class' => 'btn btn-danger'])}} 
+	                         {{ Form::close() }} 
+   
+		 </td>
                 </tr>
                 @endforeach
             </tbody>
