@@ -28,6 +28,7 @@ Route::auth();
 Route::group(['middleware'=> 'admin'], function(){
 Route::resource('/user', 'UserController');
 Route::resource('/CourseTable', 'courseController');
+Route::resource('/CourseDetails', 'CourseDetailsController');
 });
 //Route::resource('/CreateCourse','courseController');
 
